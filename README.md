@@ -1,4 +1,4 @@
-# docker ELK -  ElasticSearch, Logstash, and Kibana
+# docker-elk
+Elasticsearch Logstash Kibana source log from syslog
 
-## Tutorial
-[Docker ELK : ElasticSearch, Logstash, and Kibana](https://www.bogotobogo.com/DevOps/Docker/Docker_ELK_ElasticSearch_Logstash_Kibana.php)
+Please clone this repository on /root/docker-elk
