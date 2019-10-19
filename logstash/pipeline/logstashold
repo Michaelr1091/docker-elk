@@ -1,0 +1,26 @@
+input {
+	file {
+	 	path => [ "/var/tmp/logs/*log" ]
+		start_position => "beginning"
+	}
+}
+filter {	
+
+	grok{
+		match => { "message" => "%{TIMESTAMP_ISO8601:Date}.%{WORD:ServiceId}.%{WORD:ServiceName}.%{GREEDYDATA:json_data}" }
+	
+		}
+
+	json {
+		source => "json_data"
+		}			
+	
+}
+
+## Add your filters / logstash plugins configuration here
+
+output {
+  elasticsearch {
+    hosts => [ "elasticsearch:9200" ]
+  }
+}
